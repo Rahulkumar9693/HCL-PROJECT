@@ -1,0 +1,113 @@
+=== 19. DATASET OVERVIEW ===
+Rows: 30, Columns: 8
+Column Names: ['Student_ID', 'Department', 'Attendance', 'Study_Hours', 'Python_Marks', 'Maths_Marks', 'English_Marks', 'Internet_Access']
+
+First 5 Rows:
+   Student_ID Department  Attendance  Study_Hours  Python_Marks  Maths_Marks  English_Marks Internet_Access
+0           1        CSE        92.0           14            85           88             79             Yes
+1           2         IT        78.0            8            62           70             66              No
+2           3        ECE        85.0           10            74           77             72             Yes
+3           4        CSE        96.0           18            94           91             89             Yes
+4           5         ME        67.0            5            48           55             52              No
+
+=== 20. MISSING VALUES & DUPLICATES ===
+Missing values per column:
+Student_ID         0
+Department         0
+Attendance         2
+Study_Hours        0
+Python_Marks       0
+Maths_Marks        0
+English_Marks      0
+Internet_Access    0
+
+Duplicate Student_ID count: 0
+
+=== 21. MISSING ATTENDANCE HANDLING ===
+Method Used: Median Imputation (Median = 83.50)
+Explanation: Attendance data often has extreme low outliers. Using the median prevents those outliers from skewing the replacement value.
+
+=== 22. SCORE RANGE VALIDATION (0-100) ===
+Python_Marks: 0 out-of-range values found.
+Maths_Marks: 0 out-of-range values found.
+English_Marks: 0 out-of-range values found.
+
+=== 23. TOTAL & AVERAGE MARKS (SAMPLE) ===
+ Student_ID  Total_Marks  Average_Marks
+          1          252          84.00
+          2          198          66.00
+          3          223          74.33
+          4          274          91.33
+          5          155          51.67
+
+=== 24. GRADE DISTRIBUTION ===
+Grade
+F (<40)          0
+D (40-59.99)     5
+C (60-74.99)    10
+B (75-89.99)    11
+A (90-100)       4
+
+=== 25. DEPARTMENT-WISE SUMMARY ===
+            Student_Count  Mean_Average_Marks  Median_Average_Marks  Highest_Marks
+Department                                                                        
+CSE                     8               85.25                 87.50          96.00
+ECE                     7               67.62                 66.33          80.00
+IT                      8               80.38                 80.34          93.67
+ME                      7               60.52                 57.33          77.33
+
+=== 26. TOP 10 STUDENTS ===
+ Student_ID Department  Total_Marks  Average_Marks        Grade
+         15        CSE          288          96.00   A (90-100)
+         25         IT          281          93.67   A (90-100)
+          4        CSE          274          91.33   A (90-100)
+         10         IT          273          91.00   A (90-100)
+         19        CSE          268          89.33 B (75-89.99)
+          8        CSE          265          88.33 B (75-89.99)
+         23        CSE          260          86.67 B (75-89.99)
+         29         IT          260          86.67 B (75-89.99)
+          1        CSE          252          84.00 B (75-89.99)
+         27        CSE          247          82.33 B (75-89.99)
+
+=== 27. AT-RISK STUDENTS (<40% AVERAGE): 0 FOUND ===
+Empty DataFrame
+Columns: [Student_ID, Department, Attendance, Average_Marks]
+Index: []
+
+=== 28. AVERAGE MARKS BY ATTENDANCE BAND ===
+                   Students  Mean_Average_Marks  Median_Average_Marks
+Attendance_Band                                                      
+Low (<60%)                1               45.33                 45.33
+Moderate (60-75%)         6               56.17                 56.50
+Good (75-90%)            16               75.48                 75.00
+Excellent (>90%)          7               90.29                 91.00
+
+=== 29. STUDY HOURS VS AVERAGE MARKS ===
+Pearson Correlation Coefficient: 0.9716
+Study_Group
+High Study Hours (>= Median)    84.16
+Low Study Hours (< Median)      60.87
+
+=== 30. PERFORMANCE BY INTERNET ACCESS ===
+                 Student_Count  Mean_Average_Marks  Mean_Study_Hours
+Internet_Access                                                     
+No                          13               60.87              6.54
+Yes                         17               84.16             14.06
+
+=== 31. PYTHON_MARKS STATISTICS (NUMPY) ===
+Median: 74.50
+Standard Deviation: 15.14
+Q1 (25th Percentile): 62.50
+Q2 (50th Percentile): 74.50
+Q3 (75th Percentile): 85.75
+
+=== 32. PYTHON_MARKS OUTLIERS (IQR METHOD) ===
+IQR: 23.25 | Valid Range: [27.62, 120.62]
+Outliers Detected: 0
+
+=== 33. RECOMMENDATIONS FOR ACADEMIC SUPPORT ===
+1. Automated Attendance Alerts: Flag students whose attendance drops below 75% for early counselor intervention.
+2. Mandatory Remedial Tutoring: Enroll all At-Risk students (<40% average) into weekly peer-mentoring and foundational workshops.
+3. Campus Wi-Fi & Offline Kits: Extend computer lab hours and provide downloadable study materials for students without home internet.
+4. Targeted Python Coding Labs: Offer hands-on lab sessions for students scoring in the bottom quartile (Q1) or flagged as outliers.
+5. Guided Study-Habit Workshops: Introduce structured weekly study planners for students logging below-median study hours.
